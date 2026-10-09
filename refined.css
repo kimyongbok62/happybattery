@@ -204,3 +204,4 @@ footer .card-link:hover { color: #fff; border-bottom-color: #fff; }
   filter: none;
 }
 .profile { margin-top: 42px; }
+.story .motto { color: var(--ink); }
