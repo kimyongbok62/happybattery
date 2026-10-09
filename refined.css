@@ -1,0 +1,169 @@
+/* 세련된 분위기 시안 — index.html 의 기본 스타일 위에 덧씌웁니다.
+   마음에 들지 않으면 index.html 의 <link rel="stylesheet" href="refined.css"> 한 줄만 지우면 원래대로 돌아갑니다. */
+
+:root {
+  --cream: #fdf8ec;
+  --paper: #ffffff;
+  --sand: #f3e8cf;
+  --ink: #2a2118;
+  --ink-soft: #6e6253;
+  --green: #23804a;
+  --green-soft: #e6f3e2;
+  --amber: #f28c28;
+  --amber-deep: #d96f0e;
+  --line: #eadfc8;
+  --serif: "Noto Serif KR", "Nanum Myeongjo", serif;
+  --sans: "Pretendard Variable", Pretendard, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+}
+
+body { font-size: 16.5px; line-height: 1.8; letter-spacing: -.01em; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-weight: 600; letter-spacing: -.03em; }
+.wrap { max-width: 1120px; padding: 0 28px; }
+
+/* 상단 메뉴 */
+header { background: rgba(253, 248, 236, .92); }
+.bar { min-height: 68px; }
+.brand { font-size: 18px; letter-spacing: -.02em; }
+.logo { width: 36px; height: 36px; }
+nav { gap: 26px; }
+nav a { padding: 6px 0; border-radius: 0; font-size: 14.5px; position: relative; }
+nav a:hover { background: none; color: var(--ink); }
+nav a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .25s;
+}
+nav a:hover::after { transform: scaleX(1); }
+
+/* 첫 화면 */
+.hero { padding: 104px 0 120px; }
+.eyebrow { font-size: 12px; letter-spacing: .42em; font-weight: 500; color: var(--amber-deep); }
+.hero h1 { font-size: clamp(52px, 8.4vw, 96px); font-weight: 700; margin: 18px 0 22px; letter-spacing: -.045em; }
+.tagline { font-size: clamp(19px, 2.2vw, 23px); color: var(--ink-soft); margin-bottom: 30px; }
+.tags { gap: 0; margin-bottom: 44px; }
+.tags li {
+  padding: 0; border: 0; border-radius: 0; background: none;
+  font-size: 14px; color: var(--ink-soft); letter-spacing: .02em;
+}
+.tags li + li::before { content: "·"; margin: 0 12px; color: var(--amber); }
+.btn { border-radius: 2px; border-width: 1px; padding: 14px 30px; font-size: 15px; letter-spacing: .01em; }
+.btn:hover { transform: none; }
+.btn.fill:hover { background: var(--ink); border-color: var(--ink); }
+.btn.line:hover { background: var(--green); color: #fff; }
+.plate { box-shadow: 0 30px 60px -20px rgba(29, 29, 27, .28); }
+.plate.p2, .plate.p3 { border-width: 8px; }
+
+/* 공통 섹션 */
+section { padding: 128px 0; }
+.head { margin-bottom: 56px; }
+.num {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--sans); font-size: 12px; letter-spacing: .3em; font-weight: 500;
+}
+.num::after { content: ""; width: 44px; height: 1px; background: var(--amber); }
+.head h2 { font-size: clamp(32px, 4.4vw, 46px); margin: 18px 0 16px; }
+.head p { font-size: 17px; }
+.sub { font-size: 20px; margin: 72px 0 22px; padding-top: 22px; border-top: 1px solid var(--line); }
+
+/* 작성 안내(아직 채우지 않은 곳)는 눈에 덜 띄게 */
+.todo {
+  border: 0; border-left: 2px solid var(--line); border-radius: 0; background: none;
+  color: #a09d95; font-size: 14px; padding: 2px 0 2px 12px;
+}
+
+/* 소개 */
+.about { grid-template-columns: 280px 1fr; gap: 72px; }
+.portrait { border-radius: 2px; border: 0; }
+.profile { margin-top: 28px; font-size: 15px; }
+.profile b { width: 56px; color: var(--amber-deep); font-size: 13px; letter-spacing: .08em; }
+.story p { font-size: 17px; line-height: 1.95; margin-bottom: 20px; }
+.story .motto { font-size: 22px; margin: 12px 0 26px; }
+.story blockquote {
+  margin: 40px 0; padding: 0 0 0 28px; background: none; border-radius: 0;
+  border-left: 1px solid var(--amber); font-size: 23px; line-height: 1.75;
+}
+
+/* 카드: 상자 대신 가는 선 */
+.cards { gap: 40px; }
+.card, section.alt .card {
+  background: none; border: 0; border-top: 1px solid var(--ink); border-radius: 0; padding: 24px 0 0;
+}
+.card .ico { display: none; }
+.card h3 { font-size: 19px; margin-bottom: 10px; }
+.card p { font-size: 15.5px; }
+
+/* 작품 */
+.works { gap: 28px; margin-bottom: 72px; }
+.works .round { box-shadow: 0 18px 36px -14px rgba(29, 29, 27, .3); }
+.works .round.paper { border-radius: 4px; }
+.works figcaption { font-size: 16px; margin-top: 18px; }
+.works figcaption small { font-size: 13px; margin-top: 2px; }
+.photos { gap: 24px; }
+.photos .slot, .photos img { border-radius: 2px; }
+.photos .slot { border: 0; font-size: 14px; }
+.photos figcaption { font-size: 14px; }
+.exhibit { gap: 10px; }
+.exhibit img { border-radius: 2px; transition: opacity .25s; }
+.exhibit img:hover { opacity: .85; }
+
+/* 푸놀치 */
+.split { gap: 72px; }
+.steps { gap: 0; border-top: 1px solid var(--ink); }
+.steps li, section.alt .steps li {
+  background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 24px 0; gap: 22px;
+}
+.steps strong { font-size: 19px; }
+.steps span { font-size: 15px; }
+.battery { border-width: 1.5px; }
+
+/* 푸카시 갤러리 */
+.pukasi { gap: 32px; }
+.poem, section.alt .poem { background: none; border: 0; border-radius: 0; }
+.poem img { border-radius: 2px; }
+.poem div { padding: 22px 0 0; }
+.poem h3 { font-size: 19px; margin-bottom: 12px; }
+.poem p { font-size: 16px; line-height: 2; color: var(--ink-soft); }
+.ebook { margin-top: 72px; border-radius: 4px; padding: 48px; gap: 48px; }
+.ebook img { border-radius: 2px; }
+.ebook h3 { font-size: 34px; margin: 18px 0 8px; }
+.ebook .soon { border-width: 1px; border-radius: 2px; font-size: 12px; letter-spacing: .2em; padding: 6px 14px; }
+
+/* 강의 및 소식 */
+.news li { padding: 20px 0; }
+.news time { font-size: 13px; letter-spacing: .08em; padding-top: 3px; }
+.contact, section.alt .contact { background: var(--cream); border: 0; border-radius: 4px; padding: 40px; }
+.contact h3 { font-size: 22px; margin-bottom: 12px; }
+.contact dt { color: var(--amber-deep); font-size: 13px; letter-spacing: .08em; padding-top: 3px; }
+
+footer { padding: 72px 0; font-size: 13.5px; border-top: 1px solid var(--line); line-height: 2; }
+footer .logo { width: 48px; height: 48px; }
+
+@media (max-width: 860px) {
+  .wrap { padding: 0 20px; }
+  .hero { padding: 56px 0 80px; }
+  section { padding: 80px 0; }
+  .about, .split { gap: 40px; }
+  .cards { gap: 28px; }
+  nav { gap: 20px; }
+  .ebook { padding: 28px; gap: 28px; }
+  .story blockquote { font-size: 19px; padding-left: 20px; }
+}
+
+/* 생기 있는 색감 */
+.hero { background: radial-gradient(900px 520px at 82% 30%, #ffe9b8 0%, rgba(255, 233, 184, 0) 70%), radial-gradient(700px 480px at 8% 90%, #dff1d6 0%, rgba(223, 241, 214, 0) 70%); }
+.hero h1 span { color: var(--green); }
+.num { color: var(--amber-deep); font-weight: 600; }
+.num::after { height: 2px; }
+.card, section.alt .card { border-top: 2px solid var(--green); }
+.card:nth-child(2), section.alt .card:nth-child(2) { border-top-color: var(--amber); }
+.card:nth-child(3), section.alt .card:nth-child(3) { border-top-color: #e2574c; }
+.steps { border-top: 2px solid var(--green); }
+.story .motto { color: var(--green); }
+.story blockquote { border-left: 3px solid var(--amber); }
+.btn.fill:hover { background: var(--amber-deep); border-color: var(--amber-deep); }
+.btn.line { border-color: var(--green); }
+nav a:hover { color: var(--green); }
+nav a::after { background: var(--amber); height: 2px; }
+.ebook { background: linear-gradient(135deg, #23804a 0%, #1b6a3c 100%); }
+.contact, section.alt .contact { background: var(--green-soft); }
+footer { background: var(--green); color: rgba(255, 255, 255, .8); border-top: 0; }
+footer .brand { color: #fff; }
