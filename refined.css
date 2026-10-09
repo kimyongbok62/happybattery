@@ -205,3 +205,8 @@ footer .card-link:hover { color: #fff; border-bottom-color: #fff; }
 }
 .profile { margin-top: 42px; }
 .story .motto { color: var(--ink); }
+
+/* 행복나눔 활동: 사진 2장씩 나란히 */
+.photos.pair { grid-template-columns: 1fr 1fr; }
+.photos.pair img { aspect-ratio: 4 / 3; }
+.photos.pair img.wide { aspect-ratio: 2000 / 819; }
