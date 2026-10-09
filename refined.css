@@ -192,3 +192,4 @@ footer .brand { color: #fff; }
 .group { margin: 0 0 14px; font-size: 15px; color: var(--ink); font-weight: 600; }
 .photos.square { margin-bottom: 40px; }
 .photos.square img { aspect-ratio: 1; }
+.photos.group-row { margin-bottom: 40px; }
