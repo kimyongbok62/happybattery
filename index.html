@@ -197,12 +197,15 @@
   .poem h3 { font-size: 20px; margin-bottom: 10px; }
   .poem p { margin: 0; font-family: var(--serif); white-space: pre-line; line-height: 1.9; }
   .ebook {
-    margin-top: 28px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
-    background: var(--green); color: #fff; border-radius: 18px; padding: 26px 30px;
+    margin-top: 28px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center;
+    background: var(--green); color: #fff; border-radius: 18px; padding: 30px;
   }
-  .ebook h3 { font-size: 22px; }
-  .ebook p { margin: 4px 0 0; opacity: .85; font-size: 15.5px; }
-  .ebook .soon { border: 1.5px solid rgba(255,255,255,.6); border-radius: 999px; padding: 8px 18px; font-size: 15px; }
+  .ebook img { width: 220px; max-width: 100%; border-radius: 8px; box-shadow: 0 12px 28px rgba(0,0,0,.3); }
+  .ebook > div { flex: 1; min-width: 240px; }
+  .ebook h3 { font-size: 30px; margin: 14px 0 6px; }
+  .ebook p { margin: 6px 0 0; opacity: .85; font-size: 15.5px; }
+  .ebook p.lead { font-family: var(--serif); font-size: 19px; opacity: 1; margin-bottom: 14px; }
+  .ebook .soon { display: inline-block; border: 1.5px solid rgba(255,255,255,.6); border-radius: 999px; padding: 5px 16px; font-size: 14.5px; }
 
   /* 강의 및 소식 */
   .news { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
@@ -441,12 +444,15 @@
         </article>
       </div>
       <p class="todo" style="margin-top:20px">✏️ 위 시는 자리를 보여 드리기 위한 예시입니다. 선생님의 푸카시 원문으로 바꿔 주세요.</p>
-      <div class="ebook">
+      <div class="ebook" id="ebook">
+        <img src="images/ebook-cover.webp" alt="전자책 『마음을 담아, 시로 피우다』 표지" loading="lazy">
         <div>
-          <h3>푸카시 전자책</h3>
-          <p>사진과 시를 한 권에 담은 전자책을 준비하고 있습니다.</p>
+          <span class="soon">푸카시 전자책</span>
+          <h3>마음을 담아, 시로 피우다</h3>
+          <p class="lead">푸카詩로 펼쳐가는 일곱 작가의 마음여행</p>
+          <p>밥상위의 심리학 시리즈 5탄 · 한국푸드표현예술치료협회 편 · 유페이퍼</p>
+          <p>김민용, 강정희, 권태희, 김용복, 이정민, 장은희, 치유산타 김지유</p>
         </div>
-        <span class="soon">출간 준비 중</span>
       </div>
     </div>
   </section>
