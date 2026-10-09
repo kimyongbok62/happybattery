@@ -187,3 +187,18 @@ footer .brand { color: #fff; }
 .exhibit { align-items: start; }
 .exhibit figure { margin: 0; }
 .exhibit figcaption { margin-top: 8px; font-size: 13.5px; line-height: 1.6; color: var(--ink-soft); }
+
+/* 체험 프로그램: 하위 폴더 5개 (눌러서 펼침) */
+.folders { border-top: 1px solid var(--line); }
+.folders details { border-bottom: 1px solid var(--line); }
+.folders summary {
+  display: flex; align-items: center; gap: 16px; padding: 20px 4px; cursor: pointer; list-style: none;
+  font-family: var(--serif); font-size: 19px; font-weight: 600;
+}
+.folders summary::-webkit-details-marker { display: none; }
+.folders summary::after { content: "+"; margin-left: auto; font-family: var(--sans); font-weight: 300; font-size: 26px; color: var(--green); line-height: 1; }
+.folders details[open] summary::after { content: "–"; }
+.folders summary:hover { color: var(--green); }
+.folders .fnum { font-family: var(--sans); font-size: 12px; letter-spacing: .2em; color: var(--amber-deep); font-weight: 600; }
+.folders summary .todo { font-family: var(--sans); font-weight: 400; }
+.folders .photos { padding: 4px 0 32px; }
