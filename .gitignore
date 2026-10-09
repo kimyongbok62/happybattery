@@ -1,0 +1,4 @@
+# 원본 사진 (웹용 사본은 images/ 에 있음)
+KakaoTalk_*.jpg
+# 로컬 미리보기 설정
+.claude/

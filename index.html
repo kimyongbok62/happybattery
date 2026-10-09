@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>행복배터리 | 행복을 만들고, 나누고, 충전하는 공간</title>
+<meta name="description" content="푸드표현예술 · 푸놀치 · 푸카시 · 행복강의 — 행복을 만들고, 나누고, 충전하는 공간, 행복배터리">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fbf6ec;
+    --paper: #fffdf8;
+    --sand: #f1e7d3;
+    --ink: #3b2e22;
+    --ink-soft: #6f6052;
+    --green: #2f5d3a;
+    --green-soft: #e4eedd;
+    --amber: #e8962e;
+    --amber-deep: #c9741a;
+    --line: #e5d9c3;
+    --serif: "Gowun Batang", "Nanum Myeongjo", serif;
+    --sans: "Gowun Dodum", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.75;
+    word-break: keep-all;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--serif); line-height: 1.3; margin: 0; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* 상단 메뉴 */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(251, 246, 236, .94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; gap: 24px; min-height: 60px; }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--serif); font-weight: 700; font-size: 20px;
+    text-decoration: none; white-space: nowrap;
+  }
+  .battery {
+    position: relative; width: 30px; height: 16px;
+    border: 2px solid var(--green); border-radius: 4px; padding: 2px;
+    display: flex; gap: 2px; flex: none;
+  }
+  .battery::after {
+    content: ""; position: absolute; right: -6px; top: 3px;
+    width: 3px; height: 6px; background: var(--green); border-radius: 0 2px 2px 0;
+  }
+  .battery i { flex: 1; background: var(--amber); border-radius: 1px; }
+  nav { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    text-decoration: none; white-space: nowrap; font-size: 15px;
+    padding: 8px 12px; border-radius: 999px; color: var(--ink-soft);
+  }
+  nav a:hover { background: var(--green-soft); color: var(--green); }
+
+  /* 첫 화면 */
+  .hero { padding: 72px 0 88px; overflow: hidden; }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+  .eyebrow {
+    font-size: 14px; letter-spacing: .32em; color: var(--amber-deep); font-weight: 700;
+  }
+  .hero h1 { font-size: clamp(48px, 8vw, 84px); margin: 10px 0 16px; letter-spacing: -.02em; }
+  .hero h1 span { color: var(--green); }
+  .tagline { font-family: var(--serif); font-size: clamp(20px, 2.6vw, 26px); margin: 0 0 22px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 32px; list-style: none; }
+  .tags li {
+    font-size: 15px; padding: 5px 14px; border-radius: 999px;
+    background: var(--paper); border: 1px solid var(--line);
+  }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; padding: 13px 26px; border-radius: 999px;
+    text-decoration: none; font-size: 16px; border: 2px solid var(--green);
+    transition: transform .15s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.fill { background: var(--green); color: #fff; }
+  .btn.line { color: var(--green); }
+  .plates { position: relative; aspect-ratio: 1; }
+  .plate {
+    position: absolute; aspect-ratio: 1; border-radius: 50%; overflow: hidden;
+    box-shadow: 0 18px 40px rgba(59, 46, 34, .22); background: var(--sand);
+  }
+  .plate img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); }
+  .plate.p1 { width: 78%; right: 0; top: 0; }
+  .plate.p2 { width: 44%; left: 0; bottom: 2%; border: 6px solid var(--cream); }
+  .plate.p3 { width: 30%; right: 4%; bottom: 0; border: 6px solid var(--cream); }
+
+  /* 공통 섹션 */
+  section { padding: 84px 0; }
+  section.alt { background: var(--paper); border-block: 1px solid var(--line); }
+  .num { font-family: var(--serif); color: var(--amber-deep); font-size: 15px; letter-spacing: .2em; }
+  .head { margin-bottom: 40px; max-width: 640px; }
+  .head h2 { font-size: clamp(30px, 4.4vw, 42px); margin: 6px 0 12px; }
+  .head p { margin: 0; color: var(--ink-soft); }
+  .todo {
+    border: 1.5px dashed var(--amber); background: #fff6e6; color: #8a5a14;
+    border-radius: 10px; padding: 10px 14px; font-size: 14.5px;
+  }
+
+  /* 소개 */
+  .about { display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: start; }
+  .portrait {
+    aspect-ratio: 4 / 5; border-radius: 20px; background: var(--sand);
+    display: grid; place-items: center; text-align: center;
+    color: var(--ink-soft); font-size: 15px; border: 1px solid var(--line);
+  }
+  .about h3 { font-size: 24px; margin-bottom: 12px; }
+  .profile { list-style: none; padding: 0; margin: 24px 0 0; border-top: 1px solid var(--line); }
+  .profile li { display: flex; gap: 20px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .profile b { flex: none; width: 84px; color: var(--green); font-weight: 400; }
+
+  /* 카드 */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 26px;
+  }
+  section.alt .card { background: var(--cream); }
+  .card h3 { font-size: 21px; margin-bottom: 8px; }
+  .card p { margin: 0; color: var(--ink-soft); font-size: 16px; }
+  .card .ico { font-size: 28px; margin-bottom: 10px; }
+
+  /* 푸드표현예술 작품 */
+  .works { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 36px; }
+  .works figure { margin: 0; text-align: center; }
+  .works .round { border-radius: 50%; overflow: hidden; aspect-ratio: 1; box-shadow: 0 10px 24px rgba(59,46,34,.16); }
+  .works img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform .4s; }
+  .works figure:hover img { transform: scale(1.12); }
+  .works figcaption { margin-top: 14px; font-family: var(--serif); font-size: 17px; }
+  .works figcaption small { display: block; font-family: var(--sans); color: var(--ink-soft); font-size: 14px; }
+
+  /* 푸놀치 */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .steps li {
+    display: flex; gap: 16px; align-items: center;
+    background: var(--cream); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px;
+  }
+  .steps .lv { flex: none; width: 54px; }
+  .steps .lv .battery { width: 54px; height: 26px; border-radius: 6px; padding: 3px; }
+  .steps .lv .battery::after { top: 6px; height: 10px; right: -7px; }
+  .steps .lv .battery i.off { background: var(--line); }
+  .steps strong { font-family: var(--serif); font-size: 19px; display: block; }
+  .steps span { color: var(--ink-soft); font-size: 15.5px; }
+
+  /* 푸카시 */
+  .pukasi { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .poem { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+  .poem img { aspect-ratio: 1; width: 100%; object-fit: cover; }
+  .poem div { padding: 22px 24px 26px; }
+  .poem h3 { font-size: 20px; margin-bottom: 10px; }
+  .poem p { margin: 0; font-family: var(--serif); white-space: pre-line; line-height: 1.9; }
+  .ebook {
+    margin-top: 28px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
+    background: var(--green); color: #fff; border-radius: 18px; padding: 26px 30px;
+  }
+  .ebook h3 { font-size: 22px; }
+  .ebook p { margin: 4px 0 0; opacity: .85; font-size: 15.5px; }
+  .ebook .soon { border: 1.5px solid rgba(255,255,255,.6); border-radius: 999px; padding: 8px 18px; font-size: 15px; }
+
+  /* 강의 및 소식 */
+  .news { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  .news li { display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .news time { flex: none; width: 96px; color: var(--amber-deep); font-size: 15px; }
+  .contact { background: var(--cream); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
+  .contact h3 { font-size: 22px; margin-bottom: 8px; }
+  .contact p { margin: 0 0 18px; color: var(--ink-soft); font-size: 16px; }
+  .contact dl { margin: 0 0 20px; display: grid; grid-template-columns: 70px 1fr; gap: 8px 12px; font-size: 16px; }
+  .contact dt { color: var(--green); }
+  .contact dd { margin: 0; }
+
+  footer { padding: 44px 0 56px; text-align: center; color: var(--ink-soft); font-size: 14.5px; }
+  footer .brand { justify-content: center; margin-bottom: 8px; color: var(--ink); }
+
+  @media (max-width: 860px) {
+    .hero { padding: 40px 0 64px; }
+    .hero .wrap, .about, .split { grid-template-columns: 1fr; gap: 36px; }
+    .plates { max-width: 420px; margin: 0 auto; width: 100%; }
+    .portrait { max-width: 260px; }
+    .cards, .pukasi { grid-template-columns: 1fr; }
+    .works { grid-template-columns: repeat(2, 1fr); }
+    section { padding: 60px 0; }
+    .bar { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><span class="battery"><i></i><i></i><i></i></span>행복배터리</a>
+    <nav>
+      <a href="#about">소개</a>
+      <a href="#foodart">푸드표현예술</a>
+      <a href="#punolchi">푸놀치 행복교실</a>
+      <a href="#pukasi">푸카시 갤러리</a>
+      <a href="#sharing">행복나눔 활동</a>
+      <a href="#news">강의 및 소식</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">HAPPY BATTERY</div>
+        <h1>행복<span>배터리</span></h1>
+        <p class="tagline">행복을 만들고, 나누고, 충전하는 공간</p>
+        <ul class="tags">
+          <li>푸드표현예술</li><li>푸놀치</li><li>푸카시</li><li>행복강의</li>
+        </ul>
+        <div class="btns">
+          <a class="btn fill" href="#news">강의 신청하기</a>
+          <a class="btn line" href="#pukasi">작품 둘러보기</a>
+        </div>
+      </div>
+      <div class="plates">
+        <div class="plate p1"><img src="images/happy-forest.jpg" alt="과일 껍질과 채소로 접시 위에 표현한 숲과 HAPPY 글자"></div>
+        <div class="plate p2"><img src="images/apple-butterfly.jpg" alt="사과 조각으로 표현한 나비"></div>
+        <div class="plate p3"><img src="images/rice-duck.jpg" alt="밥으로 빚은 오리"></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about" class="alt">
+    <div class="wrap">
+      <div class="head">
+        <div class="num">01</div>
+        <h2>행복배터리 소개</h2>
+        <p>음식으로 마음을 표현하고, 사진과 시로 기록하며, 강의로 나눕니다. 방전된 하루에 작은 행복을 다시 채워 드리는 사람, 행복배터리입니다.</p>
+      </div>
+      <div class="about">
+        <div class="portrait">강사 프로필 사진<br>(추후 교체)</div>
+        <div>
+          <h3>인생 이야기</h3>
+          <p class="todo">✏️ 이 자리에 선생님의 인생 이야기를 3~5문장으로 넣어 주세요. (푸드표현예술을 만나게 된 계기, 행복을 전하게 된 이유 등)</p>
+          <ul class="profile">
+            <li><b>이름</b><span class="todo">성함 / 활동명</span></li>
+            <li><b>분야</b><span>푸드표현예술 · 푸놀치 · 푸카시 · 긍정심리학 · 행복강의</span></li>
+            <li><b>자격·경력</b><span class="todo">자격증, 학력, 주요 강의 경력</span></li>
+            <li><b>저서</b><span class="todo">전자책 · 출판물 (준비 중이면 ‘출간 예정’)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="foodart">
+    <div class="wrap">
+      <div class="head">
+        <div class="num">02</div>
+        <h2>푸드표현예술</h2>
+        <p>접시는 도화지, 식재료는 물감. 먹거리로 마음을 그리고 이야기를 나누는 작품과 프로그램입니다.</p>
+      </div>
+      <div class="works">
+        <figure>
+          <div class="round"><img src="images/happy-forest.jpg" alt="HAPPY 숲 작품"></div>
+          <figcaption>HAPPY 숲<small>과일 껍질 · 잎채소</small></figcaption>
+        </figure>
+        <figure>
+          <div class="round"><img src="images/apple-butterfly.jpg" alt="사과 나비 작품"></div>
+          <figcaption>사과 나비<small>사과 한 알</small></figcaption>
+        </figure>
+        <figure>
+          <div class="round"><img src="images/rice-duck.jpg" alt="밥 오리 작품"></div>
+          <figcaption>밥 오리<small>밥 · 완두콩 · 배추</small></figcaption>
+        </figure>
+        <figure>
+          <div class="round"><img src="images/happy-forest-dark.jpg" alt="가을 숲 작품"></div>
+          <figcaption>가을 숲<small>과일 껍질 · 잎채소</small></figcaption>
+        </figure>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="ico">🍎</div><h3>체험 프로그램</h3><p>어린이·가족·어르신 누구나 식재료로 마음을 표현해 보는 체험 수업.</p></div>
+        <div class="card"><div class="ico">🎨</div><h3>작품 전시</h3><p>접시 위에 담은 작품을 사진으로 기록하고 전시로 나눕니다.</p></div>
+        <div class="card"><div class="ico">🏫</div><h3>기관 출강</h3><p>학교, 복지관, 도서관, 기업 등 대상에 맞춘 맞춤형 프로그램.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="punolchi" class="alt">
+    <div class="wrap split">
+      <div>
+        <div class="head" style="margin-bottom:0">
+          <div class="num">03</div>
+          <h2>푸놀치 행복교실</h2>
+          <p>긍정심리학을 바탕으로 한 긍정코칭과 행복강의. 음식으로 놀고, 웃고, 이야기하는 동안 마음의 배터리가 차오릅니다.</p>
+          <p class="todo" style="margin-top:18px">✏️ ‘푸놀치’의 뜻과 프로그램 구성(회차·시간·대상)을 선생님 표현으로 적어 주세요.</p>
+        </div>
+      </div>
+      <ul class="steps">
+        <li>
+          <div class="lv"><span class="battery"><i></i><i class="off"></i><i class="off"></i></span></div>
+          <div><strong>만들기</strong><span>식재료로 지금의 내 마음을 표현합니다.</span></div>
+        </li>
+        <li>
+          <div class="lv"><span class="battery"><i></i><i></i><i class="off"></i></span></div>
+          <div><strong>나누기</strong><span>작품에 담긴 이야기를 함께 듣고 공감합니다.</span></div>
+        </li>
+        <li>
+          <div class="lv"><span class="battery"><i></i><i></i><i></i></span></div>
+          <div><strong>충전하기</strong><span>나의 강점과 감사를 발견하며 행복을 채웁니다.</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="pukasi">
+    <div class="wrap">
+      <div class="head">
+        <div class="num">04</div>
+        <h2>푸카시 갤러리</h2>
+        <p>푸드 + 카메라 + 시. 접시 위의 작품을 사진에 담고, 한 편의 시로 완성합니다.</p>
+      </div>
+      <div class="pukasi">
+        <article class="poem">
+          <img src="images/happy-forest-dark.jpg" alt="HAPPY 숲">
+          <div><h3>행복의 숲</h3><p>껍질도 버리지 않으면
+숲이 된다
+오늘 내 마음에도
+나무 네 그루</p></div>
+        </article>
+        <article class="poem">
+          <img src="images/apple-butterfly.jpg" alt="사과 나비">
+          <div><h3>사과 나비</h3><p>반으로 갈랐더니
+날개가 되었다
+작은 하트 하나
+먼저 날아간다</p></div>
+        </article>
+        <article class="poem">
+          <img src="images/rice-duck.jpg" alt="밥 오리">
+          <div><h3>밥 오리</h3><p>따뜻한 밥 한 공기
+뒤뚱뒤뚱
+오늘도 든든하게
+걸어가라고</p></div>
+        </article>
+      </div>
+      <p class="todo" style="margin-top:20px">✏️ 위 시는 자리를 보여 드리기 위한 예시입니다. 선생님의 푸카시 원문으로 바꿔 주세요.</p>
+      <div class="ebook">
+        <div>
+          <h3>푸카시 전자책</h3>
+          <p>사진과 시를 한 권에 담은 전자책을 준비하고 있습니다.</p>
+        </div>
+        <span class="soon">출간 준비 중</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="sharing" class="alt">
+    <div class="wrap">
+      <div class="head">
+        <div class="num">05</div>
+        <h2>행복나눔 활동</h2>
+        <p>행복은 나눌수록 충전됩니다. 봉사와 사회복지 현장에서 이어 가는 실천의 기록입니다.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="ico">🤝</div><h3>봉사 활동</h3><p class="todo">활동 기관, 기간, 내용을 적어 주세요.</p></div>
+        <div class="card"><div class="ico">🌱</div><h3>사회복지 실천</h3><p class="todo">복지 현장에서 진행한 프로그램을 적어 주세요.</p></div>
+        <div class="card"><div class="ico">💛</div><h3>재능 나눔</h3><p class="todo">무료 강의·체험 등 나눔 사례를 적어 주세요.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <div class="head">
+          <div class="num">06</div>
+          <h2>강의 및 소식</h2>
+          <p>강의 일정과 활동 기록을 전합니다.</p>
+        </div>
+        <ul class="news">
+          <li><time>2026.10</time><span>행복배터리 홈페이지를 열었습니다.</span></li>
+          <li><time>0000.00</time><span class="todo">강의·전시·출간 소식을 한 줄씩 추가해 주세요.</span></li>
+        </ul>
+      </div>
+      <div class="contact">
+        <h3>강의 신청 · 문의</h3>
+        <p>기관명, 대상, 인원, 희망 일정을 알려 주시면 맞춤 프로그램을 안내해 드립니다.</p>
+        <dl>
+          <dt>전화</dt><dd class="todo">010-0000-0000</dd>
+          <dt>이메일</dt><dd class="todo">이메일 주소</dd>
+          <dt>SNS</dt><dd class="todo">블로그 · 인스타그램 · 카카오톡 채널</dd>
+        </dl>
+        <a class="btn fill" href="#news">문의하기</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><span class="battery"><i></i><i></i><i></i></span>행복배터리</div>
+    <div>행복을 만들고, 나누고, 충전하는 공간 · HAPPY BATTERY</div>
+    <div>© 2026 행복배터리. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
