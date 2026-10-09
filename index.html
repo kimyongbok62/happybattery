@@ -171,6 +171,10 @@
   .photos figcaption { margin-top: 10px; font-size: 15px; color: var(--ink-soft); }
   .photos figcaption.todo { display: inline-block; padding: 4px 12px; }
 
+  /* 작품 전시 */
+  .exhibit { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .exhibit img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; background: var(--sand); }
+
   /* 푸놀치 */
   .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
   .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
@@ -221,6 +225,7 @@
     .portrait { max-width: 260px; }
     .cards, .pukasi, .photos { grid-template-columns: 1fr; }
     .works { grid-template-columns: repeat(2, 1fr); }
+    .exhibit { grid-template-columns: repeat(3, 1fr); gap: 10px; }
     section { padding: 60px 0; }
     .bar { gap: 12px; }
   }
@@ -338,6 +343,25 @@
         <figure><img src="images/program-1.jpg" alt="시리얼과 젤리로 붉은 종이 위에 표현한 얼굴 작품"><figcaption class="todo">사진 설명</figcaption></figure>
         <figure><img src="images/program-2.jpg" alt="중앙동 푸른학교에서 아이들과 함께한 푸놀치 활동 모습"><figcaption>중앙동 푸른학교 푸놀치 활동 후…</figcaption></figure>
         <figure><div class="slot">사진 3<br>(추후 교체)</div><figcaption class="todo">사진 설명</figcaption></figure>
+      </div>
+      <h3 class="sub" id="exhibition">작품 전시</h3>
+      <div class="exhibit">
+        <!-- 작품 추가: images/exhibition 폴더에 사진을 넣고 아래에 <img> 한 줄을 더합니다 -->
+        <img src="images/exhibition/work-01.jpg" alt="멜론과 오렌지 껍질로 만든 얼굴 작품" loading="lazy">
+        <img src="images/exhibition/work-02.jpg" alt="사탕과 색종이로 만든 팔찌 작품" loading="lazy">
+        <img src="images/exhibition/work-03.jpg" alt="분홍 종이 위에 알약을 놓은 작품" loading="lazy">
+        <img src="images/exhibition/work-04.jpg" alt="멜론 그릇에 팝콘을 담은 작품" loading="lazy">
+        <img src="images/exhibition/work-05.jpg" alt="라면과 고추로 표현한 얼굴 작품" loading="lazy">
+        <img src="images/exhibition/work-06.jpg" alt="색색의 고추를 접시에 놓은 작품" loading="lazy">
+        <img src="images/exhibition/work-07.jpg" alt="하트 과자로 만든 나무 작품" loading="lazy">
+        <img src="images/exhibition/work-08.jpg" alt="하트 메모지와 과자로 만든 소망 작품" loading="lazy">
+        <img src="images/exhibition/work-09.jpg" alt="버섯과 밥알로 표현한 작품" loading="lazy">
+        <img src="images/exhibition/work-10.webp" alt="짜장과 새우볶음밥으로 표현한 작품" loading="lazy">
+        <img src="images/exhibition/work-11.jpg" alt="단무지로 표현한 얼굴 작품" loading="lazy">
+        <img src="images/exhibition/work-12.jpg" alt="손목에 찬 사탕 팔찌" loading="lazy">
+        <img src="images/exhibition/work-13.jpg" alt="옥수수수염과 완두콩으로 표현한 얼굴 작품" loading="lazy">
+        <img src="images/exhibition/work-14.jpg" alt="수박과 옥수수수염으로 표현한 얼굴 작품" loading="lazy">
+        <img src="images/exhibition/work-15.jpg" alt="수박 위에 콩을 올린 작품" loading="lazy">
       </div>
     </div>
   </section>
