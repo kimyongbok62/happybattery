@@ -172,3 +172,8 @@ footer .brand { color: #fff; }
 .tricolor span:nth-child(1) { color: #23804a; }
 .tricolor span:nth-child(2) { color: #d93a2b; }
 .tricolor span:nth-child(3) { color: #7b3fb5; }
+
+/* '푸카詩' 삼색 */
+.pucolor span:nth-child(1) { color: #23804a; }
+.pucolor span:nth-child(2) { color: #ec4f93; }
+.pucolor span:nth-child(3) { color: #d93a2b; }
