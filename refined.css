@@ -201,6 +201,6 @@ footer .card-link:hover { color: #fff; border-bottom-color: #fff; }
 .portrait.has-photo::before { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 2px solid var(--green); border-radius: 2px; }
 .portrait.has-photo img {
   position: relative; width: 100%; height: 100%; object-fit: cover; border-radius: 2px;
-  filter: saturate(1.05) brightness(1.02);
+  filter: none;
 }
 .profile { margin-top: 42px; }
