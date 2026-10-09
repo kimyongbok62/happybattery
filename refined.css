@@ -215,3 +215,4 @@ footer .card-link:hover { color: #fff; border-bottom-color: #fff; }
 .photo-flow { column-count: 2; column-gap: 20px; }
 .photo-flow img { width: 100%; margin: 0 0 20px; border-radius: 2px; break-inside: avoid; }
 @media (max-width: 860px) { .photo-flow { column-count: 1; } }
+.photo-flow { margin-bottom: 20px; }
