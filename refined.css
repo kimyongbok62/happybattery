@@ -187,3 +187,8 @@ footer .brand { color: #fff; }
 .exhibit { align-items: start; }
 .exhibit figure { margin: 0; }
 .exhibit figcaption { margin-top: 8px; font-size: 13.5px; line-height: 1.6; color: var(--ink-soft); }
+
+/* 체험 프로그램 현장: 한 곳에서 찍은 사진 묶음 */
+.group { margin: 0 0 14px; font-size: 15px; color: var(--ink); font-weight: 600; }
+.photos.square { margin-bottom: 40px; }
+.photos.square img { aspect-ratio: 1; }
