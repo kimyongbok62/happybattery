@@ -155,6 +155,20 @@
   .works figcaption { margin-top: 14px; font-family: var(--serif); font-size: 17px; }
   .works figcaption small { display: block; font-family: var(--sans); color: var(--ink-soft); font-size: 14px; }
 
+  /* 체험 프로그램 사진 */
+  .sub { font-size: 23px; margin: 44px 0 18px; }
+  .photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .photos figure { margin: 0; }
+  .photos .slot, .photos img {
+    width: 100%; aspect-ratio: 4 / 3; border-radius: 16px; object-fit: cover;
+  }
+  .photos .slot {
+    display: grid; place-items: center; text-align: center;
+    background: var(--sand); border: 1px solid var(--line); color: var(--ink-soft); font-size: 15px;
+  }
+  .photos figcaption { margin-top: 10px; font-size: 15px; color: var(--ink-soft); }
+  .photos figcaption.todo { display: inline-block; padding: 4px 12px; }
+
   /* 푸놀치 */
   .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
   .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
@@ -203,7 +217,7 @@
     .hero .wrap, .about, .split { grid-template-columns: 1fr; gap: 36px; }
     .plates { max-width: 420px; margin: 0 auto; width: 100%; }
     .portrait { max-width: 260px; }
-    .cards, .pukasi { grid-template-columns: 1fr; }
+    .cards, .pukasi, .photos { grid-template-columns: 1fr; }
     .works { grid-template-columns: repeat(2, 1fr); }
     section { padding: 60px 0; }
     .bar { gap: 12px; }
@@ -311,6 +325,13 @@
         <div class="card"><div class="ico">🍎</div><h3>체험 프로그램</h3><p>어린이·가족·어르신 누구나 식재료로 마음을 표현해 보는 체험 수업.</p></div>
         <div class="card"><div class="ico">🎨</div><h3>작품 전시</h3><p>접시 위에 담은 작품을 사진으로 기록하고 전시로 나눕니다.</p></div>
         <div class="card"><div class="ico">🏫</div><h3>기관 출강</h3><p>학교, 복지관, 도서관, 기업 등 대상에 맞춘 맞춤형 프로그램.</p></div>
+      </div>
+      <h3 class="sub">체험 프로그램 현장</h3>
+      <div class="photos">
+        <!-- 사진을 넣을 때: <div class="slot">…</div> 를 <img src="images/파일이름.jpg" alt="설명"> 으로 바꿉니다 -->
+        <figure><div class="slot">사진 1<br>(추후 교체)</div><figcaption class="todo">사진 설명</figcaption></figure>
+        <figure><div class="slot">사진 2<br>(추후 교체)</div><figcaption class="todo">사진 설명</figcaption></figure>
+        <figure><div class="slot">사진 3<br>(추후 교체)</div><figcaption class="todo">사진 설명</figcaption></figure>
       </div>
     </div>
   </section>
