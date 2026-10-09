@@ -210,3 +210,8 @@ footer .card-link:hover { color: #fff; border-bottom-color: #fff; }
 .photos.pair { grid-template-columns: 1fr 1fr; }
 .photos.pair img { aspect-ratio: 4 / 3; }
 .photos.pair img.wide { aspect-ratio: 2000 / 819; }
+.photos.pair { margin-bottom: 40px; }
+/* 비율이 제각각인 사진을 자르지 않고 2단으로 */
+.photo-flow { column-count: 2; column-gap: 20px; }
+.photo-flow img { width: 100%; margin: 0 0 20px; border-radius: 2px; break-inside: avoid; }
+@media (max-width: 860px) { .photo-flow { column-count: 1; } }
