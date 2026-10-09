@@ -193,3 +193,5 @@ footer .brand { color: #fff; }
 .photos.square { margin-bottom: 40px; }
 .photos.square img { aspect-ratio: 1; }
 .photos.group-row { margin-bottom: 40px; }
+footer .card-link { text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .4); }
+footer .card-link:hover { color: #fff; border-bottom-color: #fff; }
