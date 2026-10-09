@@ -167,3 +167,8 @@ nav a::after { background: var(--amber); height: 2px; }
 .contact, section.alt .contact { background: var(--green-soft); }
 footer { background: var(--green); color: rgba(255, 255, 255, .8); border-top: 0; }
 footer .brand { color: #fff; }
+
+/* '푸드표현예술' 제목 삼색 */
+.tricolor span:nth-child(1) { color: #23804a; }
+.tricolor span:nth-child(2) { color: #d93a2b; }
+.tricolor span:nth-child(3) { color: #7b3fb5; }
