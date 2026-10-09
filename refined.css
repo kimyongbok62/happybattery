@@ -182,3 +182,8 @@ footer .brand { color: #fff; }
 .c-si { color: #d93a2b; }
 #pukasi .card:nth-child(2) { border-top-color: #ec4f93; }
 #pukasi .card:nth-child(3) { border-top-color: #d93a2b; }
+
+/* 작품 전시: 설명이 붙은 작품 */
+.exhibit { align-items: start; }
+.exhibit figure { margin: 0; }
+.exhibit figcaption { margin-top: 8px; font-size: 13.5px; line-height: 1.6; color: var(--ink-soft); }
