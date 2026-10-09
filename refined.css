@@ -177,3 +177,8 @@ footer .brand { color: #fff; }
 .pucolor span:nth-child(1) { color: #23804a; }
 .pucolor span:nth-child(2) { color: #ec4f93; }
 .pucolor span:nth-child(3) { color: #d93a2b; }
+.c-pu { color: #23804a; }
+.c-ka { color: #ec4f93; }
+.c-si { color: #d93a2b; }
+#pukasi .card:nth-child(2) { border-top-color: #ec4f93; }
+#pukasi .card:nth-child(3) { border-top-color: #d93a2b; }
