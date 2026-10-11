@@ -250,3 +250,4 @@ footer .card-link:hover { color: #fff; border-bottom-color: #fff; }
 .hero h1 .happy { color: #e6007e; font-weight: inherit; }
 header .brand-name b { color: #e6007e; font-weight: inherit; }
 header .brand-name i { color: var(--green); font-style: normal; }
+.tags li.tricolor, .tags li.pucolor { font-weight: 600; font-size: 15px; }
