@@ -246,3 +246,4 @@ footer .card-link:hover { color: #fff; border-bottom-color: #fff; }
 #foodart .works img, #foodart .photos img { cursor: zoom-in; }
 #foodart .photos img { transition: transform .25s, box-shadow .25s; position: relative; }
 #foodart .photos img:hover, #foodart .photos img:focus-visible { transform: scale(1.03); z-index: 2; box-shadow: 0 16px 34px -12px rgba(42, 33, 24, .5); outline: none; }
+.tricolor.punol span:nth-child(2) { color: #e6007e; }
