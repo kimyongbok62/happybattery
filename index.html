@@ -547,7 +547,7 @@
   </div>
 </footer>
 
-<!-- 작품 전시: 사진을 누르면 크게 보기 -->
+<!-- 푸드표현예술: 사진을 누르면 크게 보기 -->
 <div class="lightbox" id="lightbox" hidden>
   <button class="lb-close" type="button" aria-label="닫기">×</button>
   <button class="lb-prev" type="button" aria-label="이전 작품">‹</button>
@@ -556,22 +556,33 @@
 </div>
 <script>
   (function () {
-    var items = Array.prototype.slice.call(document.querySelectorAll('.exhibit img'));
+    var all = Array.prototype.slice.call(document.querySelectorAll('#foodart .works img, #foodart .photos img, #foodart .exhibit img'));
     var box = document.getElementById('lightbox');
     var big = box.querySelector('img'), cap = box.querySelector('figcaption');
-    var now = 0;
+    var items = [], now = 0;
+    function groupOf(el) { return el.closest('.works, .photos, .exhibit'); }
     function show(i) {
       now = (i + items.length) % items.length;
-      var el = items[now], fc = el.parentElement.tagName === 'FIGURE' ? el.parentElement.querySelector('figcaption') : null;
+      var el = items[now], text = el.alt;
+      var fc = el.closest('figure') ? el.closest('figure').querySelector('figcaption') : null;
+      if (fc && !fc.classList.contains('todo')) {
+        var small = fc.querySelector('small');
+        text = fc.firstChild.textContent.trim() + (small ? ' · ' + small.textContent.trim() : '');
+      }
       big.src = el.src; big.alt = el.alt;
-      cap.textContent = (fc ? fc.textContent : el.alt) + '  (' + (now + 1) + ' / ' + items.length + ')';
+      cap.textContent = text + '  (' + (now + 1) + ' / ' + items.length + ')';
       box.hidden = false; document.body.style.overflow = 'hidden';
     }
     function close() { box.hidden = true; document.body.style.overflow = ''; }
-    items.forEach(function (el, i) {
+    function open(el) {
+      var g = groupOf(el);
+      items = all.filter(function (x) { return groupOf(x) === g; });
+      show(items.indexOf(el));
+    }
+    all.forEach(function (el) {
       el.tabIndex = 0; el.setAttribute('role', 'button');
-      el.addEventListener('click', function () { show(i); });
-      el.addEventListener('keydown', function (e) { if (e.key === 'Enter') show(i); });
+      el.addEventListener('click', function () { open(el); });
+      el.addEventListener('keydown', function (e) { if (e.key === 'Enter') open(el); });
     });
     box.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(now - 1); });
     box.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(now + 1); });
