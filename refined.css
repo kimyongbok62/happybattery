@@ -256,3 +256,4 @@ header .brand-name i { color: var(--green); font-style: normal; }
 .tagline b { color: #e6007e; font-weight: inherit; }
 .hb b { color: #e6007e; font-weight: inherit; }
 .hb i { color: var(--green); font-style: normal; }
+.head p .hb { font-weight: 600; }
