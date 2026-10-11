@@ -219,3 +219,27 @@ footer .card-link:hover { color: #fff; border-bottom-color: #fff; }
 .photo-flow figure { margin: 0 0 20px; break-inside: avoid; }
 .photo-flow figure img { margin: 0; display: block; }
 .photo-flow figcaption { margin-top: 8px; font-size: 14px; color: var(--ink-soft); }
+
+/* 작품 전시: 올리면 살짝 커지고, 누르면 크게 보기 */
+.exhibit img { cursor: zoom-in; transition: transform .25s, box-shadow .25s, opacity .25s; position: relative; }
+.exhibit img:hover, .exhibit img:focus-visible { transform: scale(1.08); opacity: 1; z-index: 2; box-shadow: 0 16px 34px -12px rgba(42, 33, 24, .5); outline: none; }
+.lightbox[hidden] { display: none; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; background: rgba(24, 20, 14, .9);
+  display: flex; align-items: center; justify-content: center; gap: 8px; padding: 20px; cursor: zoom-out;
+}
+.lightbox figure { margin: 0; max-width: min(92vw, 900px); text-align: center; }
+.lightbox img { max-width: 100%; max-height: 80vh; border-radius: 4px; box-shadow: 0 30px 80px rgba(0, 0, 0, .5); }
+.lightbox figcaption { margin-top: 14px; color: rgba(255, 255, 255, .85); font-size: 15px; }
+.lightbox button {
+  flex: none; width: 48px; height: 48px; border: 0; border-radius: 50%; cursor: pointer;
+  background: rgba(255, 255, 255, .14); color: #fff; font-size: 30px; line-height: 1; font-family: inherit;
+}
+.lightbox button:hover { background: rgba(255, 255, 255, .28); }
+.lightbox .lb-close { position: absolute; top: 16px; right: 16px; }
+@media (max-width: 860px) {
+  .lightbox { padding: 12px; gap: 0; }
+  .lightbox .lb-prev, .lightbox .lb-next { position: absolute; bottom: 16px; }
+  .lightbox .lb-prev { left: 24%; } .lightbox .lb-next { right: 24%; }
+  .lightbox img { max-height: 68vh; }
+}

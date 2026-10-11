@@ -547,5 +547,43 @@
   </div>
 </footer>
 
+<!-- 작품 전시: 사진을 누르면 크게 보기 -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" type="button" aria-label="닫기">×</button>
+  <button class="lb-prev" type="button" aria-label="이전 작품">‹</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-next" type="button" aria-label="다음 작품">›</button>
+</div>
+<script>
+  (function () {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.exhibit img'));
+    var box = document.getElementById('lightbox');
+    var big = box.querySelector('img'), cap = box.querySelector('figcaption');
+    var now = 0;
+    function show(i) {
+      now = (i + items.length) % items.length;
+      var el = items[now], fc = el.parentElement.tagName === 'FIGURE' ? el.parentElement.querySelector('figcaption') : null;
+      big.src = el.src; big.alt = el.alt;
+      cap.textContent = (fc ? fc.textContent : el.alt) + '  (' + (now + 1) + ' / ' + items.length + ')';
+      box.hidden = false; document.body.style.overflow = 'hidden';
+    }
+    function close() { box.hidden = true; document.body.style.overflow = ''; }
+    items.forEach(function (el, i) {
+      el.tabIndex = 0; el.setAttribute('role', 'button');
+      el.addEventListener('click', function () { show(i); });
+      el.addEventListener('keydown', function (e) { if (e.key === 'Enter') show(i); });
+    });
+    box.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(now - 1); });
+    box.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(now + 1); });
+    box.addEventListener('click', close);
+    document.addEventListener('keydown', function (e) {
+      if (box.hidden) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(now - 1);
+      if (e.key === 'ArrowRight') show(now + 1);
+    });
+  })();
+</script>
+
 </body>
 </html>
