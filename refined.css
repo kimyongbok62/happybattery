@@ -251,3 +251,5 @@ footer .card-link:hover { color: #fff; border-bottom-color: #fff; }
 header .brand-name b { color: #e6007e; font-weight: inherit; }
 header .brand-name i { color: var(--green); font-style: normal; }
 .tags li.tricolor, .tags li.pucolor { font-weight: 600; font-size: 15px; }
+.tags li.happy-tag { font-weight: 600; font-size: 15px; color: var(--ink); }
+.tags li.happy-tag b { color: #e6007e; font-weight: inherit; }
