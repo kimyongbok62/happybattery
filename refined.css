@@ -248,3 +248,5 @@ footer .card-link:hover { color: #fff; border-bottom-color: #fff; }
 #foodart .photos img:hover, #foodart .photos img:focus-visible { transform: scale(1.03); z-index: 2; box-shadow: 0 16px 34px -12px rgba(42, 33, 24, .5); outline: none; }
 .tricolor.punol span:nth-child(2) { color: #e6007e; }
 .hero h1 .happy { color: #e6007e; font-weight: inherit; }
+header .brand-name b { color: #e6007e; font-weight: inherit; }
+header .brand-name i { color: var(--green); font-style: normal; }
