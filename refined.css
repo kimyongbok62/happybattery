@@ -259,3 +259,4 @@ header .brand-name i { color: var(--green); font-style: normal; }
 .head p .hb { font-weight: 600; }
 .story .tricolor, .story p .pucolor { font-weight: 600; }
 .story .hb { font-weight: 600; }
+footer .card-link { display: inline-block; margin: 6px 0; font-size: 16.5px; font-weight: 600; color: #fff; letter-spacing: -.01em; }
