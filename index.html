@@ -617,7 +617,8 @@
       var fc = el.closest('figure') ? el.closest('figure').querySelector('figcaption') : null;
       if (fc && !fc.classList.contains('todo')) {
         var small = fc.querySelector('small');
-        text = fc.firstChild.textContent.trim() + (small ? ' · ' + small.textContent.trim() : '');
+        var main = fc.textContent.replace(small ? small.textContent : '', '').trim();
+        text = main + (small ? ' · ' + small.textContent.trim() : '');
       }
       big.src = el.src; big.alt = el.alt;
       cap.textContent = text + '  (' + (now + 1) + ' / ' + items.length + ')';
