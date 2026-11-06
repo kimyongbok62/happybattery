@@ -264,3 +264,4 @@ footer .card-link { display: inline-block; margin: 6px 0; font-size: 16.5px; fon
 .news .news-book img { width: 56px; border-radius: 2px; box-shadow: 0 6px 14px -6px rgba(0, 0, 0, .35); flex: none; }
 .news .news-book small { color: var(--ink-soft); font-size: 13.5px; }
 #foodart .photo-flow img { cursor: zoom-in; }
+.photo-flow.one { column-count: 1; }
